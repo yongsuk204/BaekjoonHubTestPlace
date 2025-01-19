@@ -1,0 +1,11 @@
+### 250119 배운점 ###
+1. 백준 입력을 vscode 확장을 통해서 입출력을 받아볼 수 있다.
+2. max()  / 문제번호 : 10818
+words = ["apple", "banana", "cherry"]
+print(max(words, key=len))  # 출력: banana (길이가 가장 긴 단어)
+scores = {"Alice": 90, "Bob": 85, "Charlie": 92}
+print(max(scores, key=scores.get))  # 출력: Charlie (점수가 가장 높은 사람)
+3. all_grade = [0 for i in range(20)]      # 입력값 넣을 빈 리스트 만들기 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 식으로 생성됨
+                          # 0을 20개 만듬
+for i in range(20):
+    all_grade[i] = list(map(str, input().split()))      # 입력값을 리스트로 만들기 / 인풋을 20번 즉, 20개 인풋을 한번에 다 불러옴
