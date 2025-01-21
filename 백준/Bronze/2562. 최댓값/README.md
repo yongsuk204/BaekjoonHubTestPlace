@@ -34,8 +34,8 @@
 
  ### 제출 
 
-<p>total_list = []        # 새로운 리스트 만듬
-
+<p>
+    total_list = []        # 새로운 리스트 만듬
     for _ in range(9):      # 9번 반복문 두드림
         i = int(input())    # 두드려질때마다 인풋값 가져옴(순서대로)
         total_list.append(i)    # 인풋값가져온거 리스트에 넣음
