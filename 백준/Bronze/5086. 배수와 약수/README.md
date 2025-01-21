@@ -40,3 +40,34 @@
 
  <p>각 테스트 케이스마다 첫 번째 숫자가 두 번째 숫자의 약수라면 factor를, 배수라면 multiple을, 둘 다 아니라면 neither를 출력한다.</p>
 
+ ### 배운점 + 제출
+
+  <p>
+  
+a, b = list(map(int, input().split()))
+
+while True :
+    if (a == 0) and (b == 0):
+        break
+    elif b % a == 0:
+        print('factor')
+    elif a % b ==0:
+        print('multiple')
+    else:
+        print('neither')
+
+		###이렇게하면 입력값이 1개(첫번째줄)만 되기때문에 무한루프에 빠진다.
+		그래서 입력갑 a,b를 반복문 안으로 넣어야한다###
+
+while True :
+	a, b = list(map(int, input().split()))
+    if (a == 0) and (b == 0):
+        break
+    elif b % a == 0:
+        print('factor')
+    elif a % b ==0:
+        print('multiple')
+    else:
+        print('neither')
+</p>
+
