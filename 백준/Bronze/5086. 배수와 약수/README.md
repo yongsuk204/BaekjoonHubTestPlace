@@ -43,7 +43,7 @@
  ### 배운점 + 제출
 
   <p>
-  
+오답풀이 1
 a, b = list(map(int, input().split()))
 
 while True :
