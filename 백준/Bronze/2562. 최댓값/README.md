@@ -35,14 +35,14 @@
  ### 제출 
 
 <p>
-    total_list = []        # 새로운 리스트 만듬
-    for _ in range(9):      # 9번 반복문 두드림
-        i = int(input())    # 두드려질때마다 인풋값 가져옴(순서대로)
-        total_list.append(i)    # 인풋값가져온거 리스트에 넣음
-        max_value = max(total_list)     # 리스트중의 최대값
-        max_idx = total_list.index(max_value)+1     # 최대값의 인덱스위치
-    print(int(max_value))       # 문자열을 정수화시킴
-    print(max_idx)
+total_list = []        # 새로운 리스트 만듬
+for _ in range(9):      # 9번 반복문 두드림
+    i = int(input())    # 두드려질때마다 인풋값 가져옴(순서대로)
+    total_list.append(i)    # 인풋값가져온거 리스트에 넣음
+    max_value = max(total_list)     # 리스트중의 최대값
+    max_idx = total_list.index(max_value)+1     # 최대값의 인덱스위치
+print(int(max_value))       # 문자열을 정수화시킴
+print(max_idx)
 
 오답풀이 1
     total_list = []        
