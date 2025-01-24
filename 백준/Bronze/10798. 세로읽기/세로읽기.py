@@ -7,7 +7,7 @@ result = ''     # 세로로 읽은것을 담을 객체생성
 
 for i in range(15):     # 입력값 가로가 1~15개
     for j in range(5):      # 입력값은 무조건 5개(줄)이다
-        if i < len(words[j]):   # 가로입력길이가 15이하인것만 반영하겠다는 조건
+        if i < len(words[j]):   # words(최대 5개)에서 i번째 인덱스가 있는지 없는지 확인함
             result += words[j][i]
             # out of range가 일어날 수 없는 이유는 If 조건문에서 걸러진다.
 
