@@ -1,20 +1,20 @@
-import sys
+def is_sosu(n):     # 소수인지 확인하는 함수만들기기
+    if n < 2:       # 0,1 은 소수가 아님님
+        return False
+    for i in range(2, int(n**0.5) + 1):     # 2부터 제곱근 까지
+        if n % i == 0:      # 나눠서 0이 된다는건 나눠진다는것이기때문에 소수가 아님
+            return False    # 2부터 제곱근까지 모두 나눠보았을때 나눠지는게 하나라도 있으면 소수가 아님 판정정
+    return True     # 2부터 제곱근까지 모두 나눠보았을때 나눠지는게 모두 없으면 소수로 판정 / if문 안으로 else: 로해서 들어가면, 나눠지는게 있어도 소수판정하는 오류가 있음 그래서 조건문 밖으로 빼야함
 
-def sieve_of_eratosthenes(M, N):
-    is_prime = [True] * (N + 1)  # M~N 까지의 숫자가 모두 소수라고 가정
-    is_prime[0] = is_prime[1] = False  # 0과 1은 소수가 아님
+def is_palin(n):    # 팰린드롬숫자인지 확인하는 함수만들기
+    if str(n) == str(n)[::-1]:      # n은 int로 입력되기때문에 문자열로 바꿔서 거꾸로해도 동일한경우 True판정
+        return True
+    
 
-    for i in range(2, int(N**0.5) + 1):  # 2부터 N의 제곱근 까지만 검사, 그 이후는 배수처리에 의해서 사라짐
-        if is_prime[i]:  # i가 소수라면, 인덱스 번호와 실제 숫자는 일치함
-            for j in range(i * i, N + 1, i):  # i의 배수들을 False로 마킹
-                # i*i 이전의 숫자는 이미 False 처리가 되었음
-                is_prime[j] = False     # 여기까지는 0부터 N까지 숫자중에 소수만 True로 바뀜
+n = int(input())        # 입력값 받아오기
 
-    # M 이상 N 이하의 소수만 출력
-    for num in range(M, N + 1):
-        if is_prime[num]:       # 인덱스의 위치와 실제 번호의 위치는 동일함함
-            print(num)
-
-# 입력 받기
-M, N = map(int, sys.stdin.readline().split())
-sieve_of_eratosthenes(M, N)
+while True:
+    if is_sosu(n) and is_palin(n):      # 두가지 함수에서 True가 리턴되어야 조건문성립,
+        print(n)        # 두 조건을 만족하는 n 출력
+        break       # 조건을 찾았으니 반복문 종료
+    n+=1    # 두조건을 만족하지 못하는 n 이기때문에 다음숫자로 다시진행행
