@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args" : ["<", "input.md", ">", "output.md"]
+            "args" : ["<", "input.txt", ">", "output.txt"]
         }
     ]
 }
