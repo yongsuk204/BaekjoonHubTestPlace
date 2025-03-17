@@ -1,48 +1,21 @@
 import sys
-from collections import deque
 
-input_time = int(sys.stdin.readline())
+# 입력 받기
+n = int(sys.stdin.readline())
+arr = list(map(int, sys.stdin.readline().split()))
 
-list_1 = deque()
+# DP 테이블 초기화
+dp = [1] * n
 
-def push(x):
-    list_1.append(x)
-def pop():
-    if not list_1:
-        return -1
-    else:
-        return list_1.popleft()
-def size():
-    return len(list_1)
-def empty():
-    if not list_1:
-        return 1
-    else:
-        return 0
-def front():
-    if not list_1:
-        return -1
-    else:
-        return list_1[0]
-def back():
-    if not list_1:
-        return -1
-    else:
-        return list_1[-1]
-    
-for i in range(input_time):
-    command = sys.stdin.readline().split()
-    if command[0] == 'push':
-        push(command[1])
-    elif command[0] == 'pop':
-        print(pop())
-    elif command[0] == 'size':
-        print(size())
-    elif command[0] == 'empty':
-        print(empty())
-    elif command[0] == 'front':
-        print(front())
-    elif command[0] == 'back':
-        print(back())
-    else:
-        break
+# LIS 계산
+for i in range(1, n):
+    # print(i)
+    for j in range(i):
+        if arr[j] < arr[i]:  # 증가하는 경우
+            dp[i] = max(dp[i], dp[j] + 1)
+
+
+# 가장 긴 부분 수열의 길이 출력
+print(max(dp))
+
+
