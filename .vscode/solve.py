@@ -1,10 +1,6 @@
-number = int(input())
+import sys
+a = int(sys.stdin.readline())
 
-answer = 0
-
-while number > 0:
-    answer += number % 100
-    number //= 100
-    print(number)
-
-print(answer)
+for i in range(a):
+    a, b = map(int, sys.stdin.readline().split())
+    print(f'Case #{i+1}: {a+b}')
